@@ -16,9 +16,9 @@ import requests
 from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
 
-# Load .env from the same directory as this script
+# Load .env from the same directory as this script (fallback if env vars not set by Kiro)
 _script_dir = Path(__file__).parent
-load_dotenv(_script_dir / ".env")
+load_dotenv(_script_dir / ".env", override=False)
 
 CONFLUENCE_EMAIL = os.getenv("CONFLUENCE_EMAIL", "")
 CONFLUENCE_API_TOKEN = os.getenv("CONFLUENCE_API_TOKEN", "")

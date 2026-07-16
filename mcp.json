@@ -3,7 +3,11 @@
     "confluence-downloader": {
       "command": "python",
       "args": ["mcp_server.py"],
-      "env": {},
+      "env": {
+        "CONFLUENCE_URL": "https://your-site.atlassian.net",
+        "CONFLUENCE_EMAIL": "you@example.com",
+        "CONFLUENCE_API_TOKEN": "your-api-token"
+      },
       "disabled": false,
       "autoApprove": [
         "test_connection",
