@@ -35,12 +35,12 @@ This power provides one MCP server: `confluence-downloader`
 
 ### Installation
 
-The Power installs automatically when added via Kiro. The MCP server runs via `uvx` directly from the GitHub repo, so no manual install step is needed.
+The Power installs automatically when added via Kiro. The MCP server runs via `uvx` from PyPI, so no manual install step is needed.
 
 To run it manually outside Kiro:
 
 ```
-uvx --from git+https://github.com/Dan-Rebura/confluence-downloader confluence-downloader-mcp
+uvx confluence-downloader-mcp
 ```
 
 ### Credential Setup
