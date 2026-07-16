@@ -16,9 +16,11 @@ import requests
 from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
 
-# Load .env from the same directory as this script (fallback if env vars not set by Kiro)
+# Load .env if present (fallback if env vars not set by Kiro)
 _script_dir = Path(__file__).parent
-load_dotenv(_script_dir / ".env", override=False)
+_env_file = _script_dir / ".env"
+if _env_file.exists():
+    load_dotenv(_env_file, override=False)
 
 CONFLUENCE_EMAIL = os.getenv("CONFLUENCE_EMAIL", "")
 CONFLUENCE_API_TOKEN = os.getenv("CONFLUENCE_API_TOKEN", "")
@@ -592,5 +594,9 @@ def download_page_tree(page_ref: str, confluence_url: str | None = None, output_
     return "\n".join(lines)
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+
+if __name__ == "__main__":
+    main()

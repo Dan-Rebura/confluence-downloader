@@ -31,19 +31,23 @@ This power provides one MCP server: `confluence-downloader`
 ### Prerequisites
 
 - Python 3.10+
-- Dependencies installed: `pip install -r requirements.txt` from the power's directory
+- `uv` installed (for `uvx` command)
+
+### Installation
+
+The Power installs automatically when added via Kiro. The MCP server runs via `uvx` directly from the GitHub repo, so no manual install step is needed.
+
+To run it manually outside Kiro:
+
+```
+uvx --from git+https://github.com/Dan-Rebura/confluence-downloader confluence-downloader-mcp
+```
 
 ### Credential Setup
 
-Create a `.env` file in the power's root directory:
+After installing the Power, configure the env vars in the Power's MCP settings:
 
-```
-CONFLUENCE_URL=https://your-site.atlassian.net
-CONFLUENCE_EMAIL=you@example.com
-CONFLUENCE_API_TOKEN=your-token
-```
-
-- `CONFLUENCE_URL` - default Atlassian site (can be overridden per tool call)
+- `CONFLUENCE_URL` - default Atlassian site URL (can be overridden per tool call)
 - `CONFLUENCE_EMAIL` - your Atlassian login email
 - `CONFLUENCE_API_TOKEN` - unscoped API token
 

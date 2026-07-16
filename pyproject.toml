@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "confluence-downloader-mcp"
+version = "1.0.0"
+description = "MCP server for downloading Confluence Cloud pages as Markdown"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.32.0",
+    "markdownify>=0.14.0",
+    "python-dotenv>=1.1.0",
+    "mcp[cli]>=1.0.0",
+]
+
+[project.scripts]
+confluence-downloader-mcp = "confluence_downloader_mcp:main"
