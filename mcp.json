@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "confluence-downloader": {
+      "command": "python",
+      "args": ["mcp_server.py"],
+      "env": {},
+      "disabled": false,
+      "autoApprove": [
+        "test_connection",
+        "list_spaces"
+      ]
+    }
+  }
+}
