@@ -2,7 +2,7 @@
   "mcpServers": {
     "confluence-downloader": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/Dan-Rebura/confluence-downloader", "confluence-downloader-mcp"],
+      "args": ["confluence-downloader-mcp"],
       "env": {
         "CONFLUENCE_URL": "https://your-site.atlassian.net",
         "CONFLUENCE_EMAIL": "you@example.com",
